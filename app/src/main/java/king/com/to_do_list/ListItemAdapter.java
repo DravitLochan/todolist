@@ -44,6 +44,16 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
                 context.startActivity(intent);
             }
         });
+        holder.item.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                ToDoListItem toDoListItem = ToDoListItem.findById(ToDoListItem.class, items.get(position).getId());
+                toDoListItem.delete();
+                items.remove(position);
+                notifyDataSetChanged();
+                return true;
+            }
+        });
     }
 
     @Override

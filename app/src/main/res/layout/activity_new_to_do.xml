@@ -21,13 +21,23 @@
                 android:id="@+id/title"
                 android:layout_margin="20dp"
                 android:hint="Name"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#ffffff"
                 android:textStyle="normal"
                 android:padding="5dp"
                 android:textColor="#000000"
-                android:textSize="25sp"/>
+                android:textSize="25sp"
+                android:layout_weight="4"/>
+
+            <ImageButton
+                android:id="@+id/button_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_date"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"/>
 
         </LinearLayout>
 
@@ -68,5 +78,13 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="30dp" />
 
 </RelativeLayout>
