@@ -35,7 +35,14 @@ public class ListItemAdapter extends RecyclerView.Adapter<ListItemAdapter.ViewHo
     public void onBindViewHolder(ViewHolder holder, final int position) {
         holder.title.setText(items.get(position).getTitle());
         // holder.sample_text.setText(items.get(position).getSample_text());
-        holder.date.setText(items.get(position).getDate());
+        holder.date.setText(items.get(position).getDate().substring(0, 10) + items.get(position).getDate().substring(29, 34));
+        int len = items.get(position).getSample_text().length();
+        len = len > 10 ? 10 : len;
+        if(len == 0) {
+            holder.sample_text.setText("");
+        } else {
+            holder.sample_text.setText(items.get(position).getSample_text().substring(0, len-1));
+        }
         holder.item.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
